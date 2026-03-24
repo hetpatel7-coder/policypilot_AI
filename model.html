@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PolicyPilot Gujarat</title>
+<link rel="stylesheet" href="CSS\model.css">
+</head>
+
+<body>
+
+<!-- ================= LOGIN PAGE ================= -->
+
+<section id="loginPage" class="authContainer">
+
+<div class="authBox">
+
+<div class="leftAuth">
+<h1>PolicyPilot</h1>
+<p>AI for Gujarat Government Schemes</p>
+</div>
+
+<div class="rightAuth">
+
+<h2>Citizen Login</h2>
+
+<input type="text" placeholder="Mobile Number">
+<input type="password" placeholder="Password">
+
+<button onclick="openMain()">Login</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= MAIN AI PAGE ================= -->
+
+<section id="mainPage" class="page">
+
+<header class="navbar">
+
+<div class="navLeft">
+
+<button class="backBtn" onclick="goBack()">← Back</button>
+
+<div class="logo">PolicyPilot Gujarat</div>
+
+</div>
+
+<div class="navRight">
+
+<div class="stateBadge">📍 Gujarat</div>
+
+<div class="profileBox">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+<span>Citizen</span>
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<h1>Namaste Gujarat 👋</h1>
+<p>Describe your situation to find matching schemes</p>
+
+<div class="voiceBox">🎤 Tap to Speak</div>
+
+<textarea placeholder="Example: I am farmer with 2 acre land and income below 1.5 lakh"></textarea>
+
+<button class="nextBtn" onclick="openDraft()">Continue</button>
+<button class="nextBtn" onclick="submitDescription()">Submit Description</button>
+
+</section>
+
+</section>
+
+
+<!-- ================= AUTO DRAFT PAGE ================= -->
+
+<section id="draftPage" class="page">
+
+<header class="navbar">
+<div class="logo">PolicyPilot Gujarat</div>
+<div class="stateBadge">📍 Gujarat Citizen Services</div>
+</header>
+
+<section class="formSection">
+
+<h2>Auto Draft Application</h2>
+
+<input placeholder="Full Name">
+<input placeholder="Aadhaar Number">
+<input placeholder="Annual Income">
+<input placeholder="Land Size">
+
+<button class="nextBtn" onclick="openResult()">Find Matching Schemes</button>
+
+</section>
+
+</section>
+
+
+<!-- ================= RESULT PAGE ================= -->
+
+<section id="resultPage" class="page">
+
+<header class="navbar">
+<div class="logo">PolicyPilot Gujarat</div>
+<div class="stateBadge">📍 Gujarat Citizen Services</div>
+</header>
+
+<section class="resultSection">
+
+<h1>Eligible Schemes</h1>
+
+<div class="schemeCard">
+
+<div class="schemeTop">
+<h3>PM Kisan Samman Nidhi</h3>
+<span class="match high">92% Match</span>
+</div>
+
+<p>Income verified below scheme limit and farmer land record matched.</p>
+
+<ul>
+<li>✔ Aadhaar Required</li>
+<li>✔ Land Record</li>
+<li>✔ Bank Account</li>
+</ul>
+
+<button class="applyBtn" onclick="openBenefit()">Compare Benefits</button>
+
+</div>
+
+
+<div class="schemeCard conflict">
+
+<div class="schemeTop">
+<h3>Gujarat Irrigation Subsidy</h3>
+<span class="match low">74% Match</span>
+</div>
+
+<p class="conflictText">
+⚠ Conflict Detected:  
+Central income limit ₹1.5L vs Gujarat rule ₹2L
+</p>
+
+<button class="applyBtn">Resolve Conflict</button>
+
+</div>
+
+</section>
+
+</section>
+<!-- ================= BENEFIT CALCULATOR ================= -->
+
+<section id="benefitPage" class="page">
+
+<header class="navbar">
+<div class="logo">PolicyPilot Gujarat</div>
+<div class="stateBadge">📍 Gujarat Citizen Services</div>
+</header>
+
+<section class="resultSection">
+
+<h1>Scheme Benefit Comparison</h1>
+
+<div class="schemeCard">
+
+<h3>PM Kisan</h3>
+<p>Annual Benefit ₹6000</p>
+
+</div>
+
+<div class="schemeCard">
+
+<h3>Gujarat Farmer Subsidy</h3>
+<p>Annual Benefit ₹10000</p>
+
+</div>
+
+<div class="bestScheme">
+⭐ Suggested Best Scheme: Gujarat Farmer Subsidy
+</div>
+
+<button class="nextBtn" onclick="openUpload()">Select & Continue</button>
+
+</section>
+
+</section>
+
+
+
+<!-- ================= DOCUMENT UPLOAD ================= -->
+
+<section id="uploadPage" class="page">
+
+<header class="navbar">
+<div class="logo">PolicyPilot Gujarat</div>
+<div class="stateBadge">📍 Gujarat Citizen Services</div>
+</header>
+
+<section class="formSection">
+
+<h2>Upload Required Documents</h2>
+
+<!-- Aadhaar -->
+<div class="uploadCard">
+<label>1️⃣ Aadhaar Card</label>
+<input type="file" onchange="showFileName(this,'aadhaarFile')">
+<p id="aadhaarFile" class="fileName">No file chosen</p>
+</div>
+
+<!-- Income -->
+<div class="uploadCard">
+<label>2️⃣ Income Certificate</label>
+<input type="file" onchange="showFileName(this,'incomeFile')">
+<p id="incomeFile" class="fileName">No file chosen</p>
+</div>
+
+<!-- Caste -->
+<div class="uploadCard">
+<label>3️⃣ Caste Certificate</label>
+<input type="file" onchange="showFileName(this,'casteFile')">
+<p id="casteFile" class="fileName">No file chosen</p>
+</div>
+
+<button class="nextBtn" onclick="autoFillForm()">Upload & Auto Fill</button>
+
+</section>
+
+</section>
+
+
+<script src="js/model.js"></script>
+</body>
+</html>
